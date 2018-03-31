@@ -12,6 +12,8 @@
 )
 )
 
+;If the Start of the list is empty ignore it, when the sum of a pair is zero print it
+;this is the logic part of the SumLSum procedure
 (define(sublsum-helper l)
 (cond 
     [(null? (car l)) (sublsum-helper (cdr l))]

@@ -11,8 +11,19 @@
 
 ;Logic for the maj fuction
 (define (maj-helper x y z lst)
-  
-
+  (if (null?(car x))
+  lst
+    (if (= (car x)(car y))
+    (maj-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
+      (if (=(car x)(car z))
+       (maj-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
+       (if (= (car y)(car z))
+       lst
+       lst
+       )
+      )
+    )
+  )
   )
 ;Test 1: Expected Output '(0 0 0 1 0 1 1 1)
  

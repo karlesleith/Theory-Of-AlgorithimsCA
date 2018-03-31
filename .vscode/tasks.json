@@ -9,7 +9,7 @@
       "isBuildCommand": true,
       "showOutput": "always",
       "args": ["${relativeFile}"],
-      //"presentation": {"panel": "new"},
+     // "presentation": {"panel": "new"},
     }
   ]
 }
