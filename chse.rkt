@@ -7,25 +7,18 @@
 
 
 (define(chse x y z)
-  (chse-helper x y z empty)
+  (chse-helper x y z )
   )
 
 ;Logic for the chse fuction
-(define (chse-helper x y z lst)
-  (if (null?(car x))
-  lst
-    (if (= (car x)(car y))
-    (chse-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
-      (if (=(car x)(car z))
-       (chse-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
-       (if (= (car y)(car z))
-       lst
-       lst
-       )
-      )
-    )
-  )
-  )
+(define (chse-helper x y z)
+  (cond
+    ((null? x) '())
+    ((or(and(= (car y) 1)(=(car x) 1))(and(= (car y) 1)(=(car z) 1))) (cons 1 (chse-helper (cdr x) (cdr y) (cdr z))))
+    ((or(and(= (car y) 1)(=(car x) 0))(and(= (car y) 1)(=(car z) 0))) (cons 0 (chse-helper (cdr x) (cdr y) (cdr z))))
+    ((or(and(= (car y) 0)(=(car x) 1))(and(= (car y) 0)(=(car z) 1))) (cons 1 (chse-helper (cdr x) (cdr y) (cdr z))))
+    ((or(and(= (car y) 0)(=(car x) 0))(and(= (car y) 0)(=(car z) 0))) (cons (car y) (chse-helper (cdr x) (cdr y) (cdr z))))
+    (else (cons 0 (chse-helper (cdr x) (cdr y) (cdr z))))))
+    
 ;Test 1: Expected Output '(0 1 0 1 0 0 1 1)
-
-> (chse (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
+(chse (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
