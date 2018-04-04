@@ -10,7 +10,7 @@
   (chse-helper x y z empty)
   )
 
-;Logic for the maj fuction
+;Logic for the chse fuction
 (define (chse-helper x y z lst)
   (if (null?(car x))
   lst

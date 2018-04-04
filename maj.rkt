@@ -6,25 +6,16 @@
 ;of x, y and z contain 1’s, and 0 otherwise. For example:
 
 (define(maj x y z)
-  (maj-helper x y z empty)
+  (maj-helper x y z )
   )
 
 ;Logic for the maj fuction
-(define (maj-helper x y z lst)
-  (if (null?(car x))
-  lst
-    (if (= (car x)(car y))
-    (maj-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
-      (if (=(car x)(car z))
-       (maj-helper (cdr x)(cdr y) (cdr z) (cons (car x) lst))
-       (if (= (car y)(car z))
-       lst
-       lst
-       )
-      )
-    )
-  )
-  )
+(define (maj-helper x y z)
+  (cond
+    ((null? x) '())
+    ((= (car x) (car y)) (cons (car x) (maj-helper (cdr x) (cdr y) (cdr z))))
+    ((= (car x) (car z)) (cons (car x) (maj-helper (cdr x) (cdr y) (cdr z))))
+    (else (cons (car y) (maj-helper (cdr x) (cdr y) (cdr z))))))
+    
 ;Test 1: Expected Output '(0 0 0 1 0 1 1 1)
- 
 (maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
