@@ -9,7 +9,7 @@
 
 ;Logic for getting the hamming weight of a binary list
 (define (hamming-helper l)
-  (if(null? l)
+  (if(null? (cdr l))
   0
   (+ (car l)(hamming-helper(cdr l)))
   ))
