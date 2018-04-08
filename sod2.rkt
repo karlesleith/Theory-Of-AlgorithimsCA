@@ -10,7 +10,7 @@
   (sod2-helper x y z empty)
   )
 
-;Logic for the maj fuction
+;Logic for the sod2 fuction
 (define (sod2-helper x y z lst)
   (if (null?(car x))
   lst

@@ -5,10 +5,14 @@
 ;containing only 0’s and 1’s. It should return a list containing the elements of y in
 ;the positions where x is 1 and the elements of z otherwise. For example:
 
-
+;chse fuction
 (define(chse x y z)
   (chse-helper x y z )
   )
+
+
+;If the elements of X or Z are 1, we want to move the elements of Y 
+;to corrispond to the elements of X or Z
 
 ;Logic for the chse fuction
 (define (chse-helper x y z)

@@ -13,7 +13,6 @@
   0
   (+ (car l)(hamming-helper(cdr l)))
   ))
-
       
 ;Test 1
 (hamming-weight (list 1 0 1 0 1 1 1 0))

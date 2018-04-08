@@ -6,12 +6,12 @@
 
 ;Helper method that does the logic
 (define (collatz-list-helper x lst)
-(cond  [(= x 1) (append  lst (list 1))] ; if the number is one add it to the list
+(cond  [(= x 1) (cons 1 lst)] ; if the number is one add it to the list
          [(odd? x) ; if the number is odd, we use recursion and call the method again passing in a new value for x with the formula supplied
-          (collatz-list-helper2 (+(* x 3)1)(append  lst (list x)))
+          (collatz-list-helper (+(* x 3)1)(cons  x lst))
          ]
          [else ; if the number is anything else we also pass it to the list, but using a diffrent forumla
-          (collatz-list-helper2 (/ x 2)(append  lst (list x)))
+          (collatz-list-helper (/ x 2)(cons x lst ))
           ]
          )
   )

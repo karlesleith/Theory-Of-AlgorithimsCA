@@ -17,7 +17,7 @@
 (define(sublsum-helper l)
 (cond 
     [(null? (car l)) (sublsum-helper (cdr l))]
-    [(zero? (sum(car l))) (cons (car l) null)]
+    [(zero? (sum(car l))) (cons (car l) ())]
     [else (sublsum-helper(cdr l))])
 )
 

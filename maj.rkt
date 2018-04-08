@@ -5,9 +5,16 @@
 ;containing only 0’s and 1’s. It should return a list containing a 1 where two or more
 ;of x, y and z contain 1’s, and 0 otherwise. For example:
 
+
+;maj fuction
 (define(maj x y z)
   (maj-helper x y z )
   )
+
+
+;If first the list is null, we print out a null list;
+;If the corrisponding 2 elements of the 2 of the 3 list are equal, then we push create ourselves
+;a new list that is made up the heavier weighted elements
 
 ;Logic for the maj fuction
 (define (maj-helper x y z)
